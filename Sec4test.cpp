@@ -1,10 +1,23 @@
-/*//
+//
 // Created by Administrator on 2018/5/31.
 //
 #include <iostream>
 #include <vector>
 //#include <string>
 using namespace std;
+
+/*
+class student{
+public:
+    int age;
+    student(int i) {
+        this->age = i;
+    }
+    bool operator == (const student& s) const {
+        return this->age==s.age;
+    }
+};
+*/
 
 void test1(){
     cout << "What is your first name?";
@@ -76,11 +89,15 @@ void test9(){
 }
 
 int main(){
+    /*student s1(10);
+    student s2(10);
+    student s3(11);
+    cout<< (s1==s3);*/
     //test1();
     //test3();
     //test5();
     //test8();
     //test9();
     return 0;
-}*/
+}
 
