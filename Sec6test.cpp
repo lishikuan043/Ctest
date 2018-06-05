@@ -69,24 +69,82 @@ using namespace std;
     }
 }*/
 
-void test4(){
-    int strsize = 20;
-    struct bop{
-        char fullname[strsize];
-        char title[strsize];
-        char bopname[strsize];
-        int preference;
-    };
-    vector<bop> bvector;
-    bop b1("l","s","k",1);
+struct bop{
+    char fullname[20];
+    char title[20];
+    char bopname[20];
+    int preference;
+};
 
-    bvector.push_back(bop(""))
 
+void fun1(bop b){
+    cout << b.fullname << endl;
 }
+
+void fun2(bop b){
+    cout << b.title << endl;
+}
+
+void fun3(bop b){
+    cout << b.bopname << endl;
+}
+
+void fun4(bop b){
+    if(b.preference == 1) cout << b.fullname << endl;
+    if(b.preference == 2) cout << b.title<< endl;
+    if(b.preference == 3) cout << b.bopname << endl;
+}
+
+void test4(){
+
+    vector<bop> bvector;
+    bop b1 = {"gxh","pro","gemou",2};
+    bop b2 = {"txt","stu_txt","little sun",3};
+    bop b3 = {"lsk","stu_lsk","kuange",1};
+    bvector.push_back(b1);
+    bvector.push_back(b2);
+    bvector.push_back(b3);
+    cout << "input: a)fullname, b)titile, c)bopname d)preference q)quit";
+    char c;
+    bool flag = false;
+    cin.get(c);
+    while(!flag){
+        switch (c){
+            case 'a': for_each(bvector.begin(),bvector.end(),fun1);
+            cin.get();
+            cin.get(c);
+                break;
+            case 'b': for_each(bvector.begin(),bvector.end(),fun2);
+                cin.get();
+                cin.get(c);
+                break;
+            case 'c': for_each(bvector.begin(),bvector.end(),fun3);
+                cin.get();
+                cin.get(c);
+                break;
+            case 'd': for_each(bvector.begin(),bvector.end(),fun4);
+                cin.get();
+                cin.get(c);
+                break;
+            case 'q': flag = true;
+                      cout<<"bye";
+                break;
+            default: {
+                cin.clear();
+                cin.get();
+                cout << "input again";
+                cin.get(c);
+            }
+        }
+    }
+}
+
+
 
 int main() {
     //test1();
     //test2();
     //test3();
+    test4();
     return 0;
 }
