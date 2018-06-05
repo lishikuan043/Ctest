@@ -1,3 +1,4 @@
+/*
 //
 // Created by Administrator on 2018/6/1.
 //
@@ -5,6 +6,7 @@
 #include <cstring>
 using namespace std;
 
+*/
 /*void test1(){
     int min,max,sum;
     sum=0;
@@ -16,8 +18,10 @@ using namespace std;
         sum+=i;
     }
     cout << "sum between min and max is: "<< sum;
-}*/
+}*//*
 
+
+*/
 /*void test4(){
     double daphne = 100.0;
     double cleo = 100.0;
@@ -28,8 +32,10 @@ using namespace std;
     }
     cout << "after " << year << "years cleo upgrow daphne."<< endl;
     cout << "daphne = " << daphne << " cleo=" << cleo;
-}*/
+}*//*
 
+
+*/
 /*void test8(){
     char ch[20];
     int count = 0;
@@ -40,7 +46,8 @@ using namespace std;
     cout <<"you enter total of " << count << " words.";
 
 
-}*/
+}*//*
+
 
 void test10(){
     cout << "Enter number of rows:";
@@ -65,3 +72,4 @@ int main(){
     test10();
     return 0;
 }
+*/
