@@ -5,6 +5,8 @@
 #include <iostream>
 #include <cctype>
 #include <vector>
+#include <string>
+#include <fstream>
 
 using namespace std;
 
@@ -77,7 +79,7 @@ struct bop{
 };
 
 
-void fun1(bop b){
+/*void fun1(bop b){
     cout << b.fullname << endl;
 }
 
@@ -137,14 +139,124 @@ void test4(){
             }
         }
     }
+}*/
+
+struct donateItem{
+    string name;
+    double money;
+};
+
+/*void test6(){
+    int n;
+    cout << "input total number:";
+    cin >> n;
+    cin.get();
+    string tempname;
+    double tempmoney;
+    vector<donateItem> dvector_vip;
+    vector<donateItem> dvector;
+    for (int i = 0; i < n; ++i) {
+        cout << "input the name (" << i+1 << " of " << n <<"):"<<endl;
+        getline(cin,tempname);
+        cout << "input the money (" << i+1 << " of " << n <<"):"<<endl;
+        cin>>tempmoney;
+        cin.get();
+        struct donateItem d={tempname,tempmoney};
+        if (tempmoney > 10000){
+            dvector_vip.push_back(d);
+        } else{
+            dvector.push_back(d);
+        }
+    }
+    cout << "Grand Patrons:" << endl;
+    if (!dvector_vip.empty()){
+        for (int i = 0; i < dvector_vip.size(); ++i) {
+            cout << dvector_vip[i].name << endl;
+        }
+    } else{
+        cout << "none" <<endl;
+    }
+    cout << "Patrons:" << endl;
+    if (!dvector.empty()){
+        for (int i = 0; i < dvector.size(); ++i) {
+            cout << dvector[i].name << endl;
+        }
+    } else{
+        cout << "none" <<endl;
+    }
+}*/
+
+/*void test8(){
+    ifstream infile;
+    ofstream outfile;
+    infile.open("test.txt");
+    if (infile.is_open()){
+        cout << "open successfully!" << endl;
+        char c;
+        int count = 0;
+        while(infile>>c){
+            count++;
+        }
+        cout << count << " characters read!";
+    } else{
+        cout << "open fail!"<<endl;
+    }
+}*/
+
+void test9(){
+    ifstream infile;
+    infile.open("test.txt");
+    if (infile.is_open()){
+        cout << "open successfully!" << endl;
+        int n;
+        string tempname;
+        double tempmoney;
+        vector<donateItem> dvector_vip;
+        vector<donateItem> dvector;
+        (infile>>n).get();
+        for (int i = 0; i < n; ++i) {
+            cout << "input the name (" << i+1 << " of " << n <<"):"<<endl;
+            getline(infile,tempname);
+            cout << "input the money (" << i+1 << " of " << n <<"):"<<endl;
+            infile>>tempmoney;
+            infile.get();
+            struct donateItem d={tempname,tempmoney};
+            if (tempmoney > 10000){
+                dvector_vip.push_back(d);
+            } else{
+                dvector.push_back(d);
+            }
+        }
+        cout << "Grand Patrons:" << endl;
+        if (!dvector_vip.empty()){
+            for (int i = 0; i < dvector_vip.size(); ++i) {
+                cout << dvector_vip[i].name << endl;
+            }
+        } else{
+            cout << "none" <<endl;
+        }
+        cout << "Patrons:" << endl;
+        if (!dvector.empty()){
+            for (int i = 0; i < dvector.size(); ++i) {
+                cout << dvector[i].name << endl;
+            }
+        } else{
+            cout << "none" <<endl;
+        }
+        infile.close();
+        cout << "EOF AND CLOSED!"<< endl;
+    } else{
+        cout << "open fail!"<<endl;
+    }
 }
-
-
 
 int main() {
     //test1();
     //test2();
     //test3();
-    test4();
+    //test4();
+    //test6();
+    //test8();
+    test9();
     return 0;
 }
