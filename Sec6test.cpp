@@ -1,3 +1,4 @@
+/*
 //
 // Created by Administrator on 2018/6/4.
 //
@@ -10,6 +11,7 @@
 
 using namespace std;
 
+*/
 /*void test1(){
     char c;
     cin.get(c);
@@ -23,8 +25,10 @@ using namespace std;
         cin.get();
         cin.get(c);
     }
-}*/
+}*//*
 
+
+*/
 /*void test2(){
     double d[10];
     int count = 0;
@@ -47,8 +51,10 @@ using namespace std;
     cout << "input number is : " << count << endl;
     cout << "input average is : " << ave << endl;
     cout << "input number bigger than average is : " << bigcount << endl;
-}*/
+}*//*
 
+
+*/
 /*void test3(){
     char c;
 
@@ -69,7 +75,8 @@ using namespace std;
                 break;
         }
     }
-}*/
+}*//*
+
 
 struct bop{
     char fullname[20];
@@ -79,6 +86,7 @@ struct bop{
 };
 
 
+*/
 /*void fun1(bop b){
     cout << b.fullname << endl;
 }
@@ -139,13 +147,15 @@ void test4(){
             }
         }
     }
-}*/
+}*//*
+
 
 struct donateItem{
     string name;
     double money;
 };
 
+*/
 /*void test6(){
     int n;
     cout << "input total number:";
@@ -184,8 +194,10 @@ struct donateItem{
     } else{
         cout << "none" <<endl;
     }
-}*/
+}*//*
 
+
+*/
 /*void test8(){
     ifstream infile;
     ofstream outfile;
@@ -201,7 +213,8 @@ struct donateItem{
     } else{
         cout << "open fail!"<<endl;
     }
-}*/
+}*//*
+
 
 void test9(){
     ifstream infile;
@@ -259,4 +272,4 @@ int main() {
     //test8();
     test9();
     return 0;
-}
+}*/
