@@ -63,10 +63,50 @@ void test2(){
 }
 
 
+struct box{
+    char maker[40];
+    float height;
+    float width;
+    float length;
+    float volume;
+};
 
+void showBox(const box b){
+    cout << "maker:" << b.maker << endl << "height=" << b.height;
+    cout << " width=" << b.width << " length=" << b.length << " volume=" << b.volume<<endl;
+}
+
+void setBox(box* bpoint){
+    cout<<"set box volume..."<<endl;
+    bpoint->volume = bpoint->height*bpoint->width*bpoint->length;
+}
+
+void test3(){
+    box b = {"lsk",1.1,2.2,3.3,0};
+    showBox(b);
+    setBox(&b);
+    showBox(b);
+}
+
+long getfal(long n){
+    if(n==0){
+        return 1;
+    } else{
+        return n*getfal(n-1);
+    }
+}
+
+void test4(){
+    long l;
+    while(cin >> l){
+        cout << "l=" << l << " l!=" << getfal(l)<<endl;
+    }
+}
 
 int main(){
     //test1();
     //test2();
+    //test3();
+    //test4();
     return 0;
 }
