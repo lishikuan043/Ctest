@@ -1,3 +1,4 @@
+/*
 //
 // Created by 李世宽 on 2018/6/10.
 //
@@ -103,10 +104,89 @@ void test4(){
     }
 }
 
+int Fill_array(double d[],int n){
+    int count = 0;
+
+    for (int i = 0; i < n; ++i) {
+        cout << "input a double please:" << endl;
+        if (cin >> d[i]){
+            count++;
+        } else{
+            break;
+        }
+    }
+    cout << "end input."<<endl;
+    return count;
+}
+
+void Show_array(const double d[],int n){
+    for (int i = 0; i < n; ++i) {
+        cout << "d[" << i << "]=" << d[i] << " " << endl;
+    }
+}
+
+void Reverse_array(double d[],int n){
+    double temp;
+    for (int i = 0; i < n / 2; ++i) {
+        temp = d[i];
+        d[i] = d[n-i-1];
+        d[n-i-1] = temp;
+    }
+}
+
+void test6(){
+    double d[7];
+    int size = Fill_array(d,7);
+    Show_array(d,size);
+    Reverse_array(d,size);
+    Show_array(d,size);
+    Reverse_array(d,size);
+    double temp = d[0];
+    d[0] = d[size-1];
+    d[size-1] = temp;
+    Show_array(d,size);
+}
+
+double add1(double x, double y) {
+    return x+y;
+}
+
+double add2(double x, double y) {
+    return 2*x+2*y;
+}
+
+double add3(double x, double y) {
+    return 3*x+3*y;
+}
+
+double calculate(double a, double b, double (*pf)(double, double)){
+    return (*pf)(a,b);
+}
+
+void test10(){
+    double a,b;
+    cout << "input first double:" << endl;
+    cin >> a;
+    cout << "input last double:" << endl;
+    cin >> b;
+    double (*pf[3])(double, double);
+    pf[0] = add1;
+    pf[1] = add2;
+    pf[2] = add3;
+    for (int i = 0; i < 3; ++i) {
+        cout << "the " << i << "th method result:";
+        cout << calculate(a,b,pf[i]) << endl;
+    }
+
+}
+
 int main(){
     //test1();
     //test2();
     //test3();
     //test4();
+    //test6();
+    test10();
     return 0;
 }
+*/
